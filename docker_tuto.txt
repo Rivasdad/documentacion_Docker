@@ -6,12 +6,26 @@ docker es una herramienta que nos permite correr aplicaciones en contenedores de
 2. docker ps // puedo ver los contenedores que tengo activos
 
 3. docker pull nginx // comando para descargar una imagen desde docker hub// es recomendable siempre descagar las versiones alpine porque pesas menos
+
 4. docker images //comadno para ver las imagenes de nuestro docker host.
+
 5. control + d para salir del contenedor
 
+6. docker rm id //eliminar un contenedor
+
+7. docker ps -a //historial de los contenedores que he creado y que tengo
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 Procesos para contruccion de nuestra propia imagen
 1.where python
 2.vim app.py
 
 modificado
+----------------------------------------------
+proceso para iniciar postgres:
+1. docker run -e POSTGRES_PASSWORD=root postgres
+//una vez levantado postgres sql debo de conectarme al contenedor donde esta postgres para crear bd
+2. docker ps
+3. docker exec -it practical_neumann bash// el nombre del contenedor siempre va a variar
+//una vez dentro del contenedor debo de decirle que me conectare a postgre sql
+4. psql -U postgres --password
+5. consulta usando => \l
